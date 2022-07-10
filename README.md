@@ -19,16 +19,16 @@ Add this url in the template page
 
 ## Yacht
 ```
-https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/yacht/all/docker-manager-templates-yacht.json
+https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/docker-manager-templates-yacht.json
 ```
 ## Portainer v2
 
 ```
-https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/yacht/all/docker-manager-templates-portainer-v2.json
+https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/docker-manager-templates-portainer-v2.json
 ```
 
 ## Portainer v1
 
 ```
-https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/yacht/all/docker-manager-templates-portainer-v1.json
+https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/docker-manager-templates-portainer-v1.json
 ```
