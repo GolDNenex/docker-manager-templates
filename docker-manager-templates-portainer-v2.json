@@ -1,0 +1,202 @@
+{
+    "version": "2",
+    "templates": [
+        {
+            "title": "webtop - azerty",
+            "name": "webtop",
+            "image": "lscr.io/linuxserver/webtop:latest",
+            "description": "Edit the image, for example : lscr.io/linuxserver/webtop:arch-kde \n\nAlpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser. \n",
+            "platform": "linux",
+            "note": "https://hub.docker.com/r/linuxserver/webtop\n",
+            "restart_policy": "unless-stopped",
+            "ports": [
+                "3000:3000/tcp"
+            ],
+            "volumes": [
+                {
+                    "container": "/config",
+                    "bind": "/path/to/data"
+                }
+            ],
+            "env": [
+                {
+                    "name": "PUID",
+                    "default": "1000",
+                    "label": "PUID"
+                },
+                {
+                    "name": "PGID",
+                    "default": "100",
+                    "label": "PGID"
+                },
+                {
+                    "name": "TZ",
+                    "default": "Europe/Paris",
+                    "label": "TZ"
+                },
+                {
+                    "name": "SUBFOLDER",
+                    "default": "/",
+                    "label": "SUBFOLDER"
+                },
+                {
+                    "name": "KEYBOARD",
+                    "default": "fr-fr-azerty",
+                    "label": "KEYBOARD"
+                }
+            ],
+            "devices": [
+                {
+                    "container": "/dev/dri",
+                    "host": "/dev/dri"
+                }
+            ],
+            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
+            "type": 1
+        },
+        {
+            "title": "webtop - qwerty",
+            "name": "webtop",
+            "image": "lscr.io/linuxserver/webtop:latest",
+            "description": "Edit the image, for example : lscr.io/linuxserver/webtop:arch-kde \n\nAlpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser. \n",
+            "categories": [
+                "Tools",
+                "Web",
+                "Other"
+            ],
+            "platform": "linux",
+            "note": "https://hub.docker.com/r/linuxserver/webtop\n",
+            "restart_policy": "unless-stopped",
+            "ports": [
+                "3000:3000/tcp"
+            ],
+            "volumes": [
+                {
+                    "container": "/config",
+                    "bind": "/path/to/data"
+                }
+            ],
+            "env": [
+                {
+                    "name": "PUID",
+                    "default": "1000",
+                    "label": "PUID"
+                },
+                {
+                    "name": "PGID",
+                    "default": "100",
+                    "label": "PGID"
+                },
+                {
+                    "name": "TZ",
+                    "default": "Europe/London",
+                    "label": "TZ"
+                },
+                {
+                    "name": "SUBFOLDER",
+                    "default": "/",
+                    "label": "SUBFOLDER"
+                },
+                {
+                    "name": "KEYBOARD",
+                    "default": "en-gb-qwerty",
+                    "label": "KEYBOARD"
+                }
+            ],
+            "devices": [
+                {
+                    "container": "/dev/dri",
+                    "host": "/dev/dri"
+                }
+            ],
+            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
+            "type": 1
+        },
+        {
+            "type": 1,
+            "title": "Jellyfin",
+            "name": "jellyfin",
+            "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
+            "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/jellyfin.png",
+            "image": "lscr.io/linuxserver/jellyfin:latest",
+            "categories": [
+                "Video",
+                "Music",
+                "Photos"
+            ],
+            "platform": "linux",
+            "restart_policy": "unless-stopped",
+            "ports": [
+                "undefined/undefined",
+                "undefined/undefined"
+            ],
+            "volumes": [
+                {
+                    "container": "/config",
+                    "bind": "/portainer/Files/AppData/Config/Jellyfin"
+                },
+                {
+                    "container": "/data/tvshows",
+                    "bind": "/portainer/TV"
+                },
+                {
+                    "container": "/data/movies",
+                    "bind": "/portainer/Movies"
+                }
+            ],
+            "env": [
+                {
+                    "name": "PUID",
+                    "label": "PUID",
+                    "default": "1000"
+                },
+                {
+                    "name": "PGID",
+                    "label": "PGID",
+                    "default": "100"
+                },
+                {
+                    "name": "TZ",
+                    "label": "TZ"
+                }
+            ]
+        },
+        {
+            "type": 1,
+            "title": "Heimdall",
+            "name": "heimdall",
+            "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
+            "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/heimdall-icon.png",
+            "image": "lscr.io/linuxserver/heimdall:latest",
+            "categories": [
+                "Tools",
+                "Web",
+                "Other"
+            ],
+            "platform": "linux",
+            "restart_policy": "unless-stopped",
+            "ports": [
+                "undefined/undefined",
+                "undefined/undefined"
+            ],
+            "volumes": [
+                {
+                    "container": "/config",
+                    "bind": "/portainer/Files/AppData/Config/Heimdall"
+                }
+            ],
+            "env": [
+                {
+                    "name": "PUID",
+                    "label": "PUID",
+                    "default": "1000"
+                },
+                {
+                    "name": "PGID",
+                    "label": "PGID",
+                    "default": "100"
+                }
+            ]
+        }
+    ]
+}
