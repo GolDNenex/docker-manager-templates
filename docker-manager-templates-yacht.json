@@ -56,7 +56,8 @@
     "labels": [],
     "sysctls": [],
     "cap_add": [],
-    "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png"
+    "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
+    "network_mode": "bridge"
   },
   {
     "title": "webtop - qwerty",
@@ -119,7 +120,8 @@
     "labels": [],
     "sysctls": [],
     "cap_add": [],
-    "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png"
+    "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
+    "network_mode": "bridge"
   },
   {
     "type": 1,
@@ -136,21 +138,25 @@
     "platform": "linux",
     "restart_policy": "unless-stopped",
     "ports": [
-      "undefined/undefined",
-      "undefined/undefined"
+      {
+        "webui": "8096:8096/tcp"
+      },
+      {
+        "webui": "8920:8920/tcp"
+      }
     ],
     "volumes": [
       {
         "container": "/config",
-        "bind": "/portainer/Files/AppData/Config/Jellyfin"
+        "bind": "/path/to/data"
       },
       {
         "container": "/data/tvshows",
-        "bind": "/portainer/TV"
+        "bind": "/path/to/data"
       },
       {
         "container": "/data/movies",
-        "bind": "/portainer/Movies"
+        "bind": "/path/to/data"
       }
     ],
     "env": [
@@ -168,7 +174,8 @@
         "name": "TZ",
         "label": "TZ"
       }
-    ]
+    ],
+    "network_mode": "bridge"
   },
   {
     "type": 1,
@@ -185,13 +192,17 @@
     "platform": "linux",
     "restart_policy": "unless-stopped",
     "ports": [
-      "undefined/undefined",
-      "undefined/undefined"
+      {
+        "webui": "80:80/tcp"
+      },
+      {
+        "webui": "443:443/tcp"
+      }
     ],
     "volumes": [
       {
         "container": "/config",
-        "bind": "/portainer/Files/AppData/Config/Heimdall"
+        "bind": "/path/to/data"
       }
     ],
     "env": [
@@ -205,6 +216,7 @@
         "label": "PGID",
         "default": "100"
       }
-    ]
+    ],
+    "network_mode": "bridge"
   }
 ]

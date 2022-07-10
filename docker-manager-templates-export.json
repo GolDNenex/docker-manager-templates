@@ -62,7 +62,8 @@
       "labels": [],
       "sysctls": [],
       "cap_add": [],
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png"
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
+      "network_mode": "bridge"
     },
     {
       "title": "webtop - qwerty",
@@ -129,7 +130,8 @@
       "labels": [],
       "sysctls": [],
       "cap_add": [],
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png"
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
+      "network_mode": "bridge"
     },
     {
       "type": 1,
@@ -146,21 +148,31 @@
       "platform": "linux",
       "restart_policy": "unless-stopped",
       "ports": [
-        "8096:8096/tcp",
-        "8920:8920/tcp"
+        {
+          "label": "webui",
+          "hport": "8096",
+          "cport": "8096",
+          "proto": "tcp"
+        },
+        {
+          "label": "webui",
+          "hport": "8920",
+          "cport": "8920",
+          "proto": "tcp"
+        }
       ],
       "volumes": [
         {
           "container": "/config",
-          "bind": "/portainer/Files/AppData/Config/Jellyfin"
+          "bind": "/path/to/data"
         },
         {
           "container": "/data/tvshows",
-          "bind": "/portainer/TV"
+          "bind": "/path/to/data"
         },
         {
           "container": "/data/movies",
-          "bind": "/portainer/Movies"
+          "bind": "/path/to/data"
         }
       ],
       "env": [
@@ -178,7 +190,8 @@
           "name": "TZ",
           "label": "TZ"
         }
-      ]
+      ],
+      "network_mode": "bridge"
     },
     {
       "type": 1,
@@ -195,13 +208,23 @@
       "platform": "linux",
       "restart_policy": "unless-stopped",
       "ports": [
-        "80/tcp",
-        "443/tcp"
+        {
+          "label": "webui",
+          "hport": "80",
+          "cport": "80",
+          "proto": "tcp"
+        },
+        {
+          "label": "webui",
+          "hport": "443",
+          "cport": "443",
+          "proto": "tcp"
+        }
       ],
       "volumes": [
         {
           "container": "/config",
-          "bind": "/portainer/Files/AppData/Config/Heimdall"
+          "bind": "/path/to/data"
         }
       ],
       "env": [
@@ -215,7 +238,8 @@
           "label": "PGID",
           "default": "100"
         }
-      ]
+      ],
+      "network_mode": "bridge"
     }
   ]
 }
