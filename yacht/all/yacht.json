@@ -3,10 +3,10 @@
     "title": "webtop",
     "name": "webtop",
     "image": "lscr.io/linuxserver/webtop:latest",
-    "description": "",
+    "description": "webtop - Alpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser.",
     "categories": [],
     "platform": "linux",
-    "note": "webtop - Alpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser.",
+    "note": "",
     "restart_policy": "unless-stopped",
     "ports": [
       {
