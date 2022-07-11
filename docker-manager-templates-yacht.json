@@ -3,7 +3,7 @@
     "title": "webtop - azerty",
     "name": "webtop",
     "image": "lscr.io/linuxserver/webtop:latest",
-    "description": "Edit the image, for example : lscr.io/linuxserver/webtop:arch-kde \n\nAlpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser. \n",
+    "description": "Edit the image, for example : lscr.io/linuxserver/webtop:arch-kde  | \n\nAlpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser. \n",
     "categories": [],
     "platform": "linux",
     "note": "https://hub.docker.com/r/linuxserver/webtop\n",
@@ -63,7 +63,7 @@
     "title": "webtop - qwerty",
     "name": "webtop",
     "image": "lscr.io/linuxserver/webtop:latest",
-    "description": "Edit the image, for example : lscr.io/linuxserver/webtop:arch-kde \n\nAlpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser. \n",
+    "description": "Edit the image, for example : lscr.io/linuxserver/webtop:arch-kde  | \n\nAlpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser. \n",
     "categories": [
       "Tools",
       "Web",
