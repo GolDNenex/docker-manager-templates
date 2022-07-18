@@ -62,7 +62,7 @@
       "labels": [],
       "sysctls": [],
       "cap_add": [],
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
+      "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/webtop-logo.png",
       "network_mode": "bridge"
     },
     {
@@ -130,7 +130,7 @@
       "labels": [],
       "sysctls": [],
       "cap_add": [],
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
+      "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/webtop-logo.png",
       "network_mode": "bridge"
     },
     {
@@ -138,7 +138,7 @@
       "title": "Jellyfin",
       "name": "jellyfin",
       "description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
-      "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/jellyfin.png",
+      "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/jellyfin.png",
       "image": "lscr.io/linuxserver/jellyfin:latest",
       "categories": [
         "Video",
@@ -188,7 +188,8 @@
         },
         {
           "name": "TZ",
-          "label": "TZ"
+          "label": "TZ",
+          "default": ""
         }
       ],
       "network_mode": "bridge"
@@ -198,7 +199,7 @@
       "title": "Heimdall",
       "name": "heimdall",
       "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
-      "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/heimdall-icon.png",
+      "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/heimdall-icon.png",
       "image": "lscr.io/linuxserver/heimdall:latest",
       "categories": [
         "Tools",
@@ -245,13 +246,14 @@
       "title": "transmission-openvpn-nordvpn",
       "name": "transmission-openvpn",
       "image": "haugene/transmission-openvpn:latest",
+      "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/heimdall-icon.png",
       "description": "This container contains OpenVPN and Transmission with a configuration\\nwhere Transmission is running only when OpenVPN has an active tunnel.\\nIt bundles configuration files for many popular VPN providers to make the setup easier.",
       "categories": [
         "Other",
         "VPN"
       ],
       "platform": "linux",
-      "note": "List of supported providers available <a href='https://haugene.github.io/docker-transmission-openvpn/supported-providers'/>here</a>.",
+      "note": "Nordvpn ready ! List of supported providers available <a href='https://haugene.github.io/docker-transmission-openvpn/supported-providers'/>here</a>.",
       "restart_policy": "unless-stopped",
       "ports": [
         {
@@ -267,7 +269,7 @@
           "bind": "/path/to/data"
         },
         {
-          "container": "/data/downloads",
+          "container": "/downloads",
           "bind": "/path/to/data"
         }
       ],
@@ -288,6 +290,11 @@
           "label": "OPENVPN_PASSWORD"
         },
         {
+          "name": "LOCAL_NETWORK",
+          "default": "192.168.1.0/24",
+          "label": "LOCAL_NETWORK"
+        },
+        {
           "name": "NORDVPN_CATEGORY",
           "default": "legacy_p2p",
           "label": "NORDVPN_CATEGORY"
@@ -304,9 +311,9 @@
         },
         {
           "name": "TRANSMISSION_DOWNLOAD_DIR",
-          "default": "/data/downloads",
+          "default": "/downloads",
           "label": "TRANSMISSION_DOWNLOAD_DIR",
-          "description": "Default path"
+          "description": ""
         },
         {
           "name": "TRANSMISSION_RPC_USERNAME",
