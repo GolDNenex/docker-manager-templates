@@ -218,5 +218,120 @@
       }
     ],
     "network_mode": "bridge"
+  },
+  {
+    "title": "transmission-openvpn-nordvpn",
+    "name": "transmission-openvpn",
+    "image": "haugene/transmission-openvpn:latest",
+    "description": "This container contains OpenVPN and Transmission with a configuration\\nwhere Transmission is running only when OpenVPN has an active tunnel.\\nIt bundles configuration files for many popular VPN providers to make the setup easier.",
+    "categories": [
+      "Other",
+      "VPN"
+    ],
+    "platform": "linux",
+    "note": "List of supported providers available <a href='https://haugene.github.io/docker-transmission-openvpn/supported-providers'/>here</a>.",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "webui": "9091:9091/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/data",
+        "bind": "/path/to/data"
+      },
+      {
+        "container": "/data/downloads",
+        "bind": "/path/to/data"
+      }
+    ],
+    "env": [
+      {
+        "name": "OPENVPN_PROVIDER",
+        "default": "NORDVPN",
+        "label": "OPENVPN_PROVIDER"
+      },
+      {
+        "name": "OPENVPN_USERNAME",
+        "default": "username",
+        "label": "OPENVPN_USERNAME"
+      },
+      {
+        "name": "OPENVPN_PASSWORD",
+        "default": "password",
+        "label": "OPENVPN_PASSWORD"
+      },
+      {
+        "name": "NORDVPN_CATEGORY",
+        "default": "legacy_p2p",
+        "label": "NORDVPN_CATEGORY"
+      },
+      {
+        "name": "NORDVPN_PROTOCOL",
+        "default": "tcp",
+        "label": "NORDVPN_PROTOCOL"
+      },
+      {
+        "name": "NORDVPN_COUNTRY",
+        "default": "NL",
+        "label": "NORDVPN_COUNTRY"
+      },
+      {
+        "name": "TRANSMISSION_DOWNLOAD_DIR",
+        "default": "/data/downloads",
+        "label": "TRANSMISSION_DOWNLOAD_DIR",
+        "description": "Default path"
+      },
+      {
+        "name": "TRANSMISSION_RPC_USERNAME",
+        "default": "",
+        "label": "TRANSMISSION_RPC_USERNAME",
+        "description": "Leave empty for no login"
+      },
+      {
+        "name": "TRANSMISSION_RPC_PASSWORD",
+        "default": "",
+        "label": "TRANSMISSION_RPC_PASSWORD",
+        "description": "Leave empty for no login"
+      },
+      {
+        "name": "TRANSMISSION_RPC_AUTHENTICATION_REQUIRED",
+        "default": "true",
+        "label": "TRANSMISSION_RPC_AUTHENTICATION_REQUIRED"
+      },
+      {
+        "name": "TRANSMISSION_UMASK",
+        "default": "12",
+        "label": "TRANSMISSION_UMASK"
+      },
+      {
+        "name": "TRANSMISSION_PORT_FORWARDING_ENABLED",
+        "default": "true",
+        "label": "TRANSMISSION_PORT_FORWARDING_ENABLED"
+      },
+      {
+        "name": "PUID",
+        "default": "1000",
+        "label": "PUID"
+      },
+      {
+        "name": "PGID",
+        "default": "100",
+        "label": "PGID"
+      }
+    ],
+    "command": [],
+    "devices": [],
+    "labels": [],
+    "sysctls": [
+      {
+        "net.ipv6.conf.all.disable_ipv6": "1"
+      }
+    ],
+    "cap_add": [
+      "NET_ADMIN"
+    ],
+    "network_mode": "bridge"
   }
 ]
