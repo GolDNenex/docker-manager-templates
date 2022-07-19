@@ -1,59 +1,5 @@
 [
   {
-    "title": "webtop - azerty",
-    "name": "webtop",
-    "image": "lscr.io/linuxserver/webtop:latest",
-    "description": "Edit the image, for example : lscr.io/linuxserver/webtop:arch-kde  | \n\nAlpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser. \n",
-    "platform": "linux",
-    "note": "https://hub.docker.com/r/linuxserver/webtop\n",
-    "restart_policy": "unless-stopped",
-    "ports": [
-      "3000:3000/tcp"
-    ],
-    "volumes": [
-      {
-        "container": "/config",
-        "bind": "/path/to/data"
-      }
-    ],
-    "env": [
-      {
-        "name": "PUID",
-        "default": "1000",
-        "label": "PUID"
-      },
-      {
-        "name": "PGID",
-        "default": "100",
-        "label": "PGID"
-      },
-      {
-        "name": "TZ",
-        "default": "Europe/Paris",
-        "label": "TZ"
-      },
-      {
-        "name": "SUBFOLDER",
-        "default": "/",
-        "label": "SUBFOLDER"
-      },
-      {
-        "name": "KEYBOARD",
-        "default": "fr-fr-azerty",
-        "label": "KEYBOARD"
-      }
-    ],
-    "devices": [
-      {
-        "container": "/dev/dri",
-        "host": "/dev/dri"
-      }
-    ],
-    "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/webtop-logo.png",
-    "network_mode": "bridge",
-    "type": 1
-  },
-  {
     "title": "webtop - qwerty",
     "name": "webtop",
     "image": "lscr.io/linuxserver/webtop:latest",
@@ -205,7 +151,7 @@
     "title": "transmission-openvpn-nordvpn",
     "name": "transmission-openvpn",
     "image": "haugene/transmission-openvpn:latest",
-    "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/heimdall-icon.png",
+    "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/transmission-icon.png",
     "description": "This container contains OpenVPN and Transmission with a configuration\\nwhere Transmission is running only when OpenVPN has an active tunnel.\\nIt bundles configuration files for many popular VPN providers to make the setup easier.",
     "categories": [
       "Other",
