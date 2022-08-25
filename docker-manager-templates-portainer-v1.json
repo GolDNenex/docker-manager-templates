@@ -263,5 +263,44 @@
     ],
     "network_mode": "bridge",
     "type": 1
+  },
+  {
+    "title": "FileBrowser",
+    "name": "FileBrowser",
+    "image": "filebrowser/filebrowser:latest",
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "8082:8082/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/config",
+        "bind": "/path/to/data/FileBrowser"
+      },
+      {
+        "container": "/myfiles",
+        "bind": "/path/to/data/"
+      },
+      {
+        "container": "/branding",
+        "bind": "/path/to/data/FileBrowser/branding"
+      }
+    ],
+    "env": [
+      {
+        "name": "PUID",
+        "default": "1000",
+        "label": "PUID"
+      },
+      {
+        "name": "PGID",
+        "default": "100",
+        "label": "PGID"
+      }
+    ],
+    "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/filebrowser.png",
+    "network_mode": "bridge",
+    "type": 1
   }
 ]

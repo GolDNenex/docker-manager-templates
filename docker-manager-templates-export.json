@@ -302,6 +302,57 @@
         "NET_ADMIN"
       ],
       "network_mode": "bridge"
+    },
+    {
+      "title": "FileBrowser",
+      "name": "FileBrowser",
+      "image": "filebrowser/filebrowser:latest",
+      "description": "",
+      "categories": [],
+      "platform": "linux",
+      "note": "",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "label": "webui",
+          "hport": "8082",
+          "cport": "8082",
+          "proto": "tcp"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/path/to/data/FileBrowser"
+        },
+        {
+          "container": "/myfiles",
+          "bind": "/path/to/data/"
+        },
+        {
+          "container": "/branding",
+          "bind": "/path/to/data/FileBrowser/branding"
+        }
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "default": "1000",
+          "label": "PUID"
+        },
+        {
+          "name": "PGID",
+          "default": "100",
+          "label": "PGID"
+        }
+      ],
+      "command": [],
+      "devices": [],
+      "labels": [],
+      "sysctls": [],
+      "cap_add": [],
+      "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/filebrowser.png",
+      "network_mode": "bridge"
     }
   ]
 }

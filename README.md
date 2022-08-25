@@ -14,7 +14,7 @@
 - [Jellyfin | linuxserver/jellyfin](https://hub.docker.com/r/linuxserver/jellyfin) 
 - [Heimdall | linuxserver/heimdall](https://hub.docker.com/r/linuxserver/heimdall) 
 - [transmission-openvpn (nordvpn ready) | haugene/transmission-openvpn](https://hub.docker.com/r/linuxserver/heimdall) 
-
+- [FileBrowser | filebrowser/filebrowser](https://hub.docker.com/r/filebrowser/filebrowser)
 ## How to use
 
 Add this url in the template page
