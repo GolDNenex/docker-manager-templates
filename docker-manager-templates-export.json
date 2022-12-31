@@ -353,6 +353,42 @@
       "cap_add": [],
       "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/filebrowser.png",
       "network_mode": "bridge"
+    },
+    {
+      "title": "Mango-ge",
+      "name": "mango-ge",
+      "image": "goldnenex/mango-ge.latest",
+      "description": "",
+      "categories": [],
+      "platform": "linux",
+      "note": "",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "label": "webui",
+          "hport": "9000",
+          "cport": "9000",
+          "proto": "tcp"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/root/mango ",
+          "bind": "/path/to/mango-ge"
+        },
+        {
+          "container": "/root/.config/mango ",
+          "bind": "/path/to/mango-ge/.config"
+        }
+      ],
+      "env": [],
+      "command": [],
+      "devices": [],
+      "labels": [],
+      "sysctls": [],
+      "cap_add": [],
+      "logo": "https://raw.githubusercontent.com/GolDNenex/docker-manager-templates/main/assets/favicon.png",
+      "network_mode": "bridge"
     }
   ]
 }
